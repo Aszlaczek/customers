@@ -1,3 +1,3 @@
-export default function Delete({ userId }: { userId: string }) {
-  return <div>Delete {userId}</div>;
+export default function Delete() {
+  return <div>Delete</div>;
 }

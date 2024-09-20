@@ -1,3 +1,3 @@
-export default function Edit({ userId }: { userId: string }) {
-  return <div>Edit {userId}</div>;
+export default function Edit() {
+  return <div>Edit</div>;
 }
