@@ -1,0 +1,92 @@
+.navigation {
+  height: var(---size);
+}
+.page {
+  display: grid;
+  place-items: center;
+  min-height: calc(100svh - var(---size) * 2);
+}
+
+.footer {
+  color: white;
+  width: 100%;
+}
+
+.socials {
+  width: var(---size);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+
+.list_of_socials {
+  width: 100%;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0rem, 1fr));
+  gap: 2rem;
+  & > li {
+    display: grid;
+    place-items: center;
+    &:nth-child(2) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.nav_list {
+  list-style-type: none;
+  height: 100%;
+  display: grid;
+  background-image: linear-gradient(to bottom, white, transparent);
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+}
+
+.item {
+  transition: color 0.5s;
+  width: 75%;
+  text-align: center;
+  position: relative;
+  &::after {
+    transition: width 0.5s;
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: black;
+  }
+  &:hover {
+    color: black;
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.active {
+  transition: all 0.2s;
+  border-bottom: 5px solid black;
+  border-radius: 10px;
+  color: black;
+  text-shadow: 0 0 2px white;
+  width: 75%;
+  text-align: center;
+  &:hover {
+    cursor: alias;
+  }
+}
+
+#github {
+  width: 100%;
+  aspect-ratio: 1;
+  fill: white;
+}
+
+#linkedin {
+  width: 100%;
+  aspect-ratio: 1;
+  fill: white;
+}
