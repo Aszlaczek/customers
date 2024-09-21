@@ -2,8 +2,7 @@
   height: var(---size);
 }
 .page {
-  display: grid;
-  place-items: center;
+  text-align: center;
   min-height: calc(100svh - var(---size) * 2);
 }
 
