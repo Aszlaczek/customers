@@ -20,20 +20,6 @@ export default function Navigation() {
         >
           <Link href={"/users/create"}>Create User</Link>
         </li>
-        <li
-          className={`${
-            pathName === `/users/edit` ? style.active : style.item
-          }`}
-        >
-          <Link href={"/users/edit"}>Edit User</Link>
-        </li>
-        <li
-          className={`${
-            pathName === `/users/delete` ? style.active : style.item
-          }`}
-        >
-          <Link href={"/users/delete"}>Delete User</Link>
-        </li>
       </ul>
     </nav>
   );

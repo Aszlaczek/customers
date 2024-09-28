@@ -1,0 +1,59 @@
+form {
+  box-shadow: inset 0 0 10px white;
+  border-radius: 20px;
+  display: grid;
+  padding: 2rem;
+  gap: 2rem;
+  grid-template-rows: repeat(4, 1fr);
+  height: calc(100svh - (var(---size) * 4));
+  place-items: center;
+  & > button {
+    transition: 0.5s;
+    width: 25%;
+    padding: 0.5rem 1rem;
+    font-size: inherit;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    &:hover {
+      box-shadow: 0 0 20px white;
+      cursor: pointer;
+      text-shadow: 1px 1px 1px white;
+    }
+  }
+}
+
+label {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  width: 75%;
+  position: relative;
+  &::after {
+    transition: all 0.5s;
+    content: "";
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    z-index: 100;
+  }
+  &:has(> input:focus) {
+    &::after {
+      width: 100%;
+    }
+  }
+  & > input {
+    border: none;
+    background-color: transparent;
+    font-size: inherit;
+    opacity: 0.5;
+    padding: 0.5rem clamp(0rem, 8svw- 1rem, 2rem);
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+}
