@@ -26,3 +26,12 @@ export async function editUser(formData: FormData) {
   });
   redirect("/");
 }
+
+export async function deleteUser(formData: FormData) {
+  await prisma.user.delete({
+    where: {
+      id: formData.get("id") as string,
+    },
+  });
+  redirect("/");
+}

@@ -1,6 +1,5 @@
 "use client";
 
-import { editUser } from "@/actions/actions";
 import { useState } from "react";
 
 export type User = {
@@ -11,10 +10,11 @@ export type User = {
   join: Date;
 };
 
-export function Form({ user }: { user: User }) {
+export function Form({ user, action }: { user: User; action: any }) {
   const [newUser, setNewUser] = useState(user);
+
   return (
-    <form action={editUser}>
+    <form action={action}>
       <label htmlFor="name">
         <p>Name</p>
         <input

@@ -1,7 +1,7 @@
 import prisma from "@/lib/db";
 import "@/css/form.css";
-import { User } from "@prisma/client";
 import { Form } from "@/components/Form";
+import { editUser } from "@/actions/actions";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const user = await prisma.user.findUnique({
@@ -12,8 +12,8 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <h1>user id - {user?.id}</h1>
-      <Form user={user!} />
+      <h1>Edit User - {user?.name}</h1>
+      <Form user={user!} action={editUser} />
     </>
   );
 }
