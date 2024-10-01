@@ -4,6 +4,7 @@
 .page {
   text-align: center;
   min-height: calc(100svh - var(---size) * 2);
+  position: relative;
 }
 
 .footer {

@@ -1,3 +1,4 @@
+"use client";
 import prisma from "@/lib/db";
 
 export default async function Page({ params }: { params: { id: String } }) {
@@ -10,8 +11,12 @@ export default async function Page({ params }: { params: { id: String } }) {
   return (
     <>
       <h1>Are you Sure?</h1>
-      <p>{user?.name}</p>
-      <p>{user?.surname}</p>
+      <h3>To delete</h3>
+      <p>
+        {user?.name} {user?.surname}
+      </p>
+      <button onClick={() => console.log("work")}>Yes</button>
+      <button>No</button>
     </>
   );
 }

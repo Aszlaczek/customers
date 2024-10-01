@@ -27,10 +27,10 @@ export async function editUser(formData: FormData) {
   redirect("/");
 }
 
-export async function deleteUser(formData: FormData) {
+export async function deleteUser(id: string) {
   await prisma.user.delete({
     where: {
-      id: formData.get("id") as string,
+      id: id,
     },
   });
   redirect("/");
